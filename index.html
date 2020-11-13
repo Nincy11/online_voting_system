@@ -9,54 +9,11 @@
     <link rel="icon" href="./images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/animate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- <div class="signup">
-        <div class="sign-left">
-            <img src="https://summarizer.legalmind.tech/assets/images/loginsign.svg" alt="">
-        </div>
-
-        <div class="sign-right">
-            <h2 id="signup-head">Signup</h2>
-            <p class="signup-para">Please enter following details to continue</p>
-            <form action="" name="signup">
-                <div class="input-head">
-                    First Name*
-                </div>
-                <input type="text" name="fname" id="fname">
-                <div class="input-head">
-                    Last Name*
-                </div>
-                <input type="text" name="lname" id="lname">
-                <div class="input-head">
-                    Country*
-                </div>
-                <select id="country" name="country"></select>
-                <div class="input-head">
-                    State*
-                </div>
-                <select name="state" id="state"></select>
-                <div class="input-head">
-                    Email*
-                </div>
-                <input type="email" name="email" id="email">
-                <div class="input-head">
-                    Password*
-                </div>
-                <input type="password" name="password1" id="password1">
-                <div class="input-head">
-                    Confirm password*
-                </div>
-                <input type="password" name="password2" id="password2">
-                <div class="input-head">
-                    Mobile*
-                </div>
-                <input type="number" name="mobile" id="mobile">
-            </form>
-
-        </div>
-    </div> -->
 
     <div class="header">
 
@@ -66,11 +23,11 @@
 
             <div class="social-icons">
                 <ul>
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-google-plus-g"></i></li>
-                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-facebook-f fb"></i></li>
+                    <li><i class="fab fa-instagram insta"></i></li>
+                    <li><i class="fab fa-twitter tweet"></i></li>
+                    <li><i class="fab fa-google-plus-g plus"></i></li>
+                    <li><i class="fab fa-linkedin-in linkedin"></i></li>
                 </ul>
             </div>
 
@@ -245,18 +202,6 @@
         </div>
     </div>
 
-
-    <!-- faq's -->
-
-    <!-- <div class="container">
-        <div class="card">
-            <div class="front">Click to flip</div>
-            <div class="back">Yo, what up?</div>
-        </div>
-    </div> -->
-
-    <!-- !faq's -->
-
     <div class="faq-head">
         <h1 class="faq-h">Frequently Asked Questions</h1>
     </div>
@@ -283,7 +228,7 @@
                 <div class="span-q">Can ElectionsOnline handle paper ballots?</div>
             </div>
 
-            <div class="ans"><span>A.</span>
+            <div class="ans"><span style="position: relative; top: 20px;">A.</span>
                 <div class="span-a">Elections Online will not print, mail and tabulate paper ballot for clients, but the
                     software does provide the ability to retrieve a paper ballot on demand for a specific voter. Details
                     on handling the paper ballot procedure are in the Evote Instruction Manual.</div>
@@ -314,12 +259,13 @@
         </div>
         <div class="contact-right">
             <div class="form-feedback">
-                <form action="">
+                <form name="feedback" data-netlify="true" method="POST">
                     <p>Help us make it better. Give your Feedback here : </p>
                     <input type="text" name="name" id="feedback-name" placeholder="Name"><br>
                     <input type="text" name="email" id="feedback-email" placeholder="Email"><br>
-                    <textarea name="feedback" id="feedback" cols="40" rows="10"></textarea>
-                    <button>Submit</button>
+                    <textarea name="feedback" id="feedback" cols="40" rows="10"
+                        placeholder="Enter your feedback"></textarea>
+                    <button id="sub-feed">Submit</button>
                 </form>
             </div>
         </div>
@@ -332,7 +278,39 @@
     <script src="./scripts/jquery.js"></script>
     <script src="./scripts/home.js"></script>
     <script src="https://kit.fontawesome.com/80b74730a0.js" crossorigin="anonymous"></script>
-    <script src="./scripts/countries.js"></script>
+    <script>
+
+        document.querySelector('.news-btn').addEventListener('click', () => {
+            swal({
+                position: 'middle',
+                type: 'success',
+                title: 'Thanks for subscribing Newsletter.',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        })
+
+        document.querySelector('.fb').addEventListener("click",()=>{
+            window.open('http://facebook.com/jatinrathee9', '_blank');
+        })
+
+        document.querySelector('.insta').addEventListener("click",()=>{
+            window.open('http://instagram.com/jatin_rathee_', '_blank');
+        })
+
+        document.querySelector('.tweet').addEventListener("click",()=>{
+            window.open('http://twitter.com', '_blank');
+        })
+
+        document.querySelector('.plus').addEventListener("click",()=>{
+            window.open('http://google.com', '_blank');
+        })
+
+        document.querySelector('.linkedin').addEventListener("click",()=>{
+            window.open('https://www.linkedin.com/in/jatin-rathee', '_blank');
+        })
+
+    </script>
 </body>
 
 </html>

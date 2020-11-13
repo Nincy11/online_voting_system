@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie|Fredoka+One|Montserrat&display=swap');
 
+textarea::placeholder {
+    font-family: sans-serif;
+}
+
 html,
 body,
 .content,
@@ -47,6 +51,7 @@ nav {
 .social-icons>ul>li>i {
     padding: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 h1#home-head {
